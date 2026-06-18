@@ -5,8 +5,10 @@ A real, completed **Festival** you can browse end to end. Festivals are how agen
 This one — `camp-hardening-CH0001` — hardened the `camp` CLI against a class of data-loss bugs. It shipped: **4 phases, 12 sequences, 145 tasks, 100% complete.**
 
 <p align="center">
-  <img src="docs/img/fest-show.png" alt="fest show output for the camp-hardening CH0001 festival" width="300">
+  <img src="docs/img/fest-show.gif" alt="Animated fest show tree for the camp-hardening CH0001 festival" width="640">
 </p>
+
+<p align="center"><sub>Rendered with <a href="https://github.com/Obedience-Corp/fest-gif">fest-gif</a> from <code>fest show --roadmap</code>.</sub></p>
 
 ## Explore it
 
