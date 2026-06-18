@@ -2,6 +2,14 @@
 
 > Example Festival sourced from [Obedience-Corp/camp PR #324](https://github.com/Obedience-Corp/camp/pull/324).
 
+## Festival Structure
+
+`fest show` renders the full phase → sequence → task tree with live completion state:
+
+<p align="center">
+  <img src="docs/img/fest-show.png" alt="fest show output for the camp-hardening CH0001 festival" width="320">
+</p>
+
 ## Summary
 
 This PR carries the completed `camp-hardening` festival remediation branch for CH0001. The branch has been rebased onto current `origin/main`, is out of draft, and both rounds of review follow-up fixes have been pushed.
