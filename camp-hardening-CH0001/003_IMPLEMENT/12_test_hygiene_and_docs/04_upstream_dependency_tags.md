@@ -22,7 +22,7 @@ Finding: ARCH-9.
 
 ## Requirements
 
-- [x] **`github.com/lancekrogers/guild-scaffold` tagged**: currently pinned at `v0.0.0-20260518211932-1e813ced5fa5` in camp's `go.mod`. Tag the repo at `v0.1.0` (or the next sensible tag if one exists; verified: no tags exist as of review). The module path is `github.com/lancekrogers/guild-scaffold`; the source is at `projects/obey-platform-monorepo/guild-scaffold/` relative to the campaign root.
+- [x] **`github.com/lancekrogers/guild-scaffold` tagged**: currently pinned at `v0.0.0-20260518211932-1e813ced5fa5` in camp's `go.mod`. Tag the repo at `v0.1.0` (or the next sensible tag if one exists; verified: no tags exist as of review). The module path is `github.com/lancekrogers/guild-scaffold`; the source is at `projects/<platform-monorepo>/guild-scaffold/` relative to the campaign root.
 - [x] **`github.com/Obedience-Corp/obey-shared` tagged**: currently pinned at `v0.4.4-0.20260518211933-8a93452bf649`. The repo has tags through `v0.4.3` (verified). Tag at `v0.4.4` (or the next appropriate patch if `v0.4.4` conflicts). Source at `projects/obey-shared/`.
 - [x] **camp's `go.mod` updated to tags**: after tagging, run `go get github.com/lancekrogers/guild-scaffold@v0.1.0` and `go get github.com/Obedience-Corp/obey-shared@v0.4.4` (or the actual tagged versions) in the camp worktree, then `go mod tidy`. Commit `go.mod` and `go.sum`.
 - [x] **No `replace` directives**: camp's go.mod must have zero `replace` directives. The campaign rule is "tag and go get, never replace."
@@ -34,7 +34,7 @@ Finding: ARCH-9.
 
 Two external dependencies used by camp are not yet tagged at semver releases:
 
-- `github.com/lancekrogers/guild-scaffold`: used by `internal/scaffold/init.go:21` and `internal/scaffold/repair.go:18` to invoke the scaffold engine (`scaffold.Run`, etc.). Located at `projects/obey-platform-monorepo/guild-scaffold/` in the campaign.
+- `github.com/lancekrogers/guild-scaffold`: used by `internal/scaffold/init.go:21` and `internal/scaffold/repair.go:18` to invoke the scaffold engine (`scaffold.Run`, etc.). Located at `projects/<platform-monorepo>/guild-scaffold/` in the campaign.
 - `github.com/Obedience-Corp/obey-shared`: used by `internal/contract/entries.go:7` (contract entries for the obey daemon watcher), `internal/scaffold/init.go:19` (same file), and `internal/editor/editor.go:15` (procutil for process utilities). Located at `projects/obey-shared/` in the campaign.
 
 Both are owned Obedience Corp repos with direct push access. Neither has a `v0.x.y` release yet. Pseudo-versions pin to a specific commit hash, which is reproducible but makes it impossible to `go get <module>@latest` or understand version history.
@@ -46,7 +46,7 @@ Campaign rule (from CLAUDE.md and agent memory): **never use `go.mod` replace di
 Verify the current state of the guild-scaffold repo:
 
 ```bash
-cd /Users/lancerogers/Dev/AI/obey-campaign/projects/obey-platform-monorepo/guild-scaffold
+cd <campaign-root>/projects/<platform-monorepo>/guild-scaffold
 git log --oneline -5           # see recent commits
 git tag                        # verify: should be empty
 git remote -v                  # confirm remote is github.com/lancekrogers/guild-scaffold
@@ -57,7 +57,7 @@ If the remote is not `github.com/lancekrogers/guild-scaffold`, find the correct 
 Inspect the current commit to confirm it is stable for a v0.1.0 tag. Check that `go build ./...` passes in the guild-scaffold directory:
 
 ```bash
-cd /Users/lancerogers/Dev/AI/obey-campaign/projects/obey-platform-monorepo/guild-scaffold
+cd <campaign-root>/projects/<platform-monorepo>/guild-scaffold
 go build ./...
 go test ./...    # if tests exist
 ```
@@ -74,7 +74,7 @@ If push is rejected (insufficient access, protected branch policy, etc.): skip t
 ### Step 2: Check and tag obey-shared
 
 ```bash
-cd /Users/lancerogers/Dev/AI/obey-campaign/projects/obey-shared
+cd <campaign-root>/projects/obey-shared
 git log --oneline -5
 git tag                        # should show v0.1.0 through v0.4.3
 git tag | sort -V | tail -3    # confirm latest tag
@@ -96,7 +96,7 @@ If push is rejected: skip to the Disposition Path section below.
 From the camp worktree root:
 
 ```bash
-cd /Users/lancerogers/Dev/AI/obey-campaign/projects/worktrees/camp/camp-hardening
+cd <campaign-root>/projects/worktrees/camp/camp-hardening
 go get github.com/lancekrogers/guild-scaffold@v0.1.0
 go get github.com/Obedience-Corp/obey-shared@v0.4.4
 go mod tidy

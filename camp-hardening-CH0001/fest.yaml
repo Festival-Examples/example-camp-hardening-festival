@@ -14,13 +14,13 @@ metadata:
       notes: Festival created
     - status: ready
       timestamp: 2026-06-12T11:36:10.599492-06:00
-      path: /Users/lancerogers/Dev/AI/obey-campaign/festivals/ready/camp-hardening-CH0001
+      path: festivals/ready/camp-hardening-CH0001
     - status: active
       timestamp: 2026-06-12T11:36:10.915107-06:00
-      path: /Users/lancerogers/Dev/AI/obey-campaign/festivals/active/camp-hardening-CH0001
+      path: festivals/active/camp-hardening-CH0001
     - status: completed
       timestamp: 2026-06-15T17:01:33.516394-06:00
-      path: /Users/lancerogers/Dev/AI/obey-campaign/festivals/dungeon/completed/2026-06-15/camp-hardening-CH0001
+      path: festivals/dungeon/completed/2026-06-15/camp-hardening-CH0001
 project_path: projects/worktrees/camp/camp-hardening
 type_config:
   auto_phases:

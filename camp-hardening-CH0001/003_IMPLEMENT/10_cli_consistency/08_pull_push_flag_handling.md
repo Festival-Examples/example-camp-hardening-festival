@@ -107,7 +107,7 @@ type pullTarget struct {
 }
 ```
 
-The `path` field is the absolute path to the project on disk (e.g., `/Users/lance/work/obey-campaign/projects/camp`). To construct the hint, the relative path from the campaign root is needed. The display name `t.name` comes from `git.SubmoduleDisplayName(p)` where `p` is the relative path. So the relative path is already available at construction time in `buildPullTargets`.
+The `path` field is the absolute path to the project on disk (e.g., `<campaign-root>/projects/camp`). To construct the hint, the relative path from the campaign root is needed. The display name `t.name` comes from `git.SubmoduleDisplayName(p)` where `p` is the relative path. So the relative path is already available at construction time in `buildPullTargets`.
 
 To fix the hint without changing the existing struct fields, add a `relPath string` field to `pullTarget` that stores the relative path (the `p` variable in `buildPullTargets`):
 
