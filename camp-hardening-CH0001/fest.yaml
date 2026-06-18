@@ -1,0 +1,63 @@
+version: "1.0"
+metadata:
+  id: CH0001
+  uuid: 11f83d11-e369-4021-bec9-a952ffccf753
+  name: camp-hardening
+  goal: 'Remediate the fable-review-2026-06-10 camp findings: eliminate the data-loss class (worktrees clean RemoveAll, cp --force self-truncation, prune force-removing dirty worktrees, project remove deleting git modules, silent-clobber migration renames, repair auto-commit on failure), fix the red unit test gate and enforce local quality gates for both build profiles, close the fest-boundary violations (dungeon triage and resolver, promote ingest writes), sweep atomic writes and store locking across intent/quest/workflow/flow/registry, fix the agent-facing contract bugs (cr argv corruption, doctor --json exit code, workitem list mutating on read, stage filter hiding design/explore items, commitkit staging sweep), then finish with the low-severity cleanup sweeps (fmt.Errorf, dead code, file-size splits).'
+  festival_type: standard
+  created_at: 2026-06-12T04:21:20.364384Z
+  initial_size_bytes: 34143
+  status_history:
+    - status: planning
+      timestamp: 2026-06-12T04:21:20.364384Z
+      path: festivals/planning/camp-hardening-CH0001
+      notes: Festival created
+    - status: ready
+      timestamp: 2026-06-12T11:36:10.599492-06:00
+      path: /Users/lancerogers/Dev/AI/obey-campaign/festivals/ready/camp-hardening-CH0001
+    - status: active
+      timestamp: 2026-06-12T11:36:10.915107-06:00
+      path: /Users/lancerogers/Dev/AI/obey-campaign/festivals/active/camp-hardening-CH0001
+    - status: completed
+      timestamp: 2026-06-15T17:01:33.516394-06:00
+      path: /Users/lancerogers/Dev/AI/obey-campaign/festivals/dungeon/completed/2026-06-15/camp-hardening-CH0001
+project_path: projects/worktrees/camp/camp-hardening
+type_config:
+  auto_phases:
+    - INGEST
+    - PLAN
+  pending_phases:
+    - name: IMPLEMENT
+      type: implementation
+    - name: POLISH
+      type: planning
+quality_gates:
+  enabled: true
+  auto_append: true
+  implementation:
+    - id: testing
+      template: gates/implementation/QUALITY_GATE_TESTING
+      name: Testing and Verification
+      enabled: true
+    - id: review
+      template: gates/implementation/QUALITY_GATE_REVIEW
+      name: Code Review
+      enabled: true
+    - id: iterate
+      template: gates/implementation/QUALITY_GATE_ITERATE
+      name: Review Results and Iterate
+      enabled: true
+    - id: fest-commit
+      template: gates/implementation/QUALITY_GATE_FEST_COMMIT
+      name: Fest Commit Changes
+      enabled: true
+excluded_patterns:
+  - '*_planning'
+  - '*_research'
+  - '*_requirements'
+templates:
+  task_default: tasks/SIMPLE
+  prefer_simple: true
+tracking:
+  enabled: true
+  checksum_file: .festival-checksums.json
