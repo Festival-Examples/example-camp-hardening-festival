@@ -8,7 +8,7 @@ This one — `camp-hardening-CH0001` — hardened the `camp` CLI against a class
   <img src="docs/img/fest-show.gif" alt="Animated fest show tree for the camp-hardening CH0001 festival" width="640">
 </p>
 
-<p align="center"><sub>Rendered with <a href="https://github.com/Obedience-Corp/fest-gif">fest-gif</a> from <code>fest show --roadmap</code>.</sub></p>
+<p align="center"><sub>Replay of the festival's real execution, rendered from <code>fest show</code> + its event log.</sub></p>
 
 ## Explore it
 
@@ -24,7 +24,16 @@ camp-hardening-CH0001/
 
 Start at [`camp-hardening-CH0001/FESTIVAL_GOAL.md`](camp-hardening-CH0001/FESTIVAL_GOAL.md), then drill into any phase. Each task document is a self-contained unit of work an agent can pick up and finish.
 
+## Festival
+
+Festival is an open planning system for AI agents and humans — organize complex,
+multi-phase work into auditable, long-running agentic loops.
+
+- 🌐 **[fest.build](https://fest.build)** — homepage and docs
+- ⭐ **[Star Festival on GitHub](https://github.com/Obedience-Corp/festival)** — if this looks useful, a star genuinely helps others find it
+
 ## Learn more
 
+- Festival (camp + fest distribution): [Obedience-Corp/festival](https://github.com/Obedience-Corp/festival)
+- The `fest` CLI and methodology: [Obedience-Corp/fest](https://github.com/Obedience-Corp/fest)
 - Source of this example: [Obedience-Corp/camp#324](https://github.com/Obedience-Corp/camp/pull/324)
-- The Festival methodology and `fest` CLI: [Obedience-Corp/fest](https://github.com/Obedience-Corp/fest)
